@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "outDir": "build/dist",
+    "module": "esnext",
+    "target": "es5",
+    "lib": [
+      "es6",
+      "dom",
+      "es2020"
+    ],
+    "sourceMap": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "noImplicitThis": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strictPropertyInitialization": false,
+    "strict": false,
+    "noFallthroughCasesInSwitch": true
+  },
+  "exclude": [
+    "analyze_bundle.js",
+    "build",
+    "gen_licenses.js",
+    "mock-backend",
+    "node_modules",
+    "proto",
+    "scripts",
+    "server",
+    "src/apis",
+    "src/generated",
+    "webpack",
+    "**/?*test.*",
+  ],
+  "include": [
+    "src"
+  ]
+}
