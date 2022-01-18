@@ -1,1 +1,134 @@
-{"graph":"RNN(\n  (lstm): LSTM(28, 128, num_layers=2, batch_first=True)\n  (fc): Linear(in_features=128, out_features=10, bias=True)\n)","version":"9a5f42d4611d1436e1e0e6859e615c019cd0929c"}
+{
+    "backend": "tensorflow",
+    "class_name": "Functional",
+    "config": {
+        "input_layers": [
+            [
+                "input",
+                0,
+                0
+            ]
+        ],
+        "layers": [
+            {
+                "class_name": "InputLayer",
+                "config": {
+                    "batch_input_shape": [
+                        null,
+                        6,
+                        6
+                    ],
+                    "dtype": "float32",
+                    "name": "input",
+                    "ragged": false,
+                    "sparse": false
+                },
+                "inbound_nodes": [],
+                "name": "input"
+            },
+            {
+                "class_name": "Flatten",
+                "config": {
+                    "data_format": "channels_last",
+                    "dtype": "float32",
+                    "name": "hidden_1",
+                    "trainable": true
+                },
+                "inbound_nodes": [
+                    [
+                        [
+                            "input",
+                            0,
+                            0,
+                            {}
+                        ]
+                    ]
+                ],
+                "name": "hidden_1"
+            },
+            {
+                "class_name": "Dense",
+                "config": {
+                    "activation": "sigmoid",
+                    "activity_regularizer": null,
+                    "bias_constraint": null,
+                    "bias_initializer": {
+                        "class_name": "Zeros",
+                        "config": {}
+                    },
+                    "bias_regularizer": null,
+                    "dtype": "float32",
+                    "kernel_constraint": null,
+                    "kernel_initializer": {
+                        "class_name": "GlorotUniform",
+                        "config": {
+                            "seed": null
+                        }
+                    },
+                    "kernel_regularizer": null,
+                    "name": "hidden_2",
+                    "trainable": true,
+                    "units": 5,
+                    "use_bias": true
+                },
+                "inbound_nodes": [
+                    [
+                        [
+                            "hidden_1",
+                            0,
+                            0,
+                            {}
+                        ]
+                    ]
+                ],
+                "name": "hidden_2"
+            },
+            {
+                "class_name": "Dense",
+                "config": {
+                    "activation": "softmax",
+                    "activity_regularizer": null,
+                    "bias_constraint": null,
+                    "bias_initializer": {
+                        "class_name": "Zeros",
+                        "config": {}
+                    },
+                    "bias_regularizer": null,
+                    "dtype": "float32",
+                    "kernel_constraint": null,
+                    "kernel_initializer": {
+                        "class_name": "GlorotUniform",
+                        "config": {
+                            "seed": null
+                        }
+                    },
+                    "kernel_regularizer": null,
+                    "name": "output",
+                    "trainable": true,
+                    "units": 10,
+                    "use_bias": true
+                },
+                "inbound_nodes": [
+                    [
+                        [
+                            "hidden_2",
+                            0,
+                            0,
+                            {}
+                        ]
+                    ]
+                ],
+                "name": "output"
+            }
+        ],
+        "name": "SimpleNetwork",
+        "output_layers": [
+            [
+                "output",
+                0,
+                0
+            ]
+        ]
+    },
+    "keras_version": "2.4.0"
+}
