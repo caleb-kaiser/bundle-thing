@@ -1,0 +1,1 @@
+{"graph":"RNN(\n  (lstm): LSTM(28, 128, num_layers=2, batch_first=True)\n  (fc): Linear(in_features=128, out_features=10, bias=True)\n)","version":"9a5f42d4611d1436e1e0e6859e615c019cd0929c"}
